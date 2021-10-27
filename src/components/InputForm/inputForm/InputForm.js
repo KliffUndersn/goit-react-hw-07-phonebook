@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { v4 as generate } from 'uuid';
-import { useSelector, useDispatch } from 'react-redux';
-import { addContact } from '../../../redux/actions';
+import { useSelector } from 'react-redux';
+import { addContact } from '../../../redux/operations';
 import fields from './fields';
 
 const InputForm = () => {
   const items = useSelector(state => state.items);
-  const dispatch = useDispatch();
   const [state, setState] = useState({
     name: '',
     number: '',
@@ -27,7 +26,7 @@ const InputForm = () => {
       name,
       number,
     };
-    dispatch(addContact(singleContact));
+    addContact(singleContact);
   };
   return (
     <div>

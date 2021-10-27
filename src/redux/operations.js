@@ -1,15 +1,26 @@
 import api from '../shared/services/contacts';
-import actions from './actions';
+import {
+  getContactError,
+  getContactRequest,
+  getContactSuccess,
+  // addContact,
+  addContactError,
+  addContactRequest,
+  addContactSuccess,
+  removeContactError,
+  removeContactRequest,
+  removeContactSuccess,
+} from './actions';
 
 export const getContact = () => {
   const actionFunc = async dispatch => {
-    dispatch(actions.getContactRequest());
+    dispatch(getContactRequest());
 
     try {
-      const data = await api.fetchAllContact();
-      dispatch(actions.getContactSuccess(data));
+      const data = await api.fetchAllContacts();
+      dispatch(getContactSuccess(data));
     } catch (error) {
-      dispatch(actions.getContactError(error));
+      dispatch(getContactError(error));
     }
   };
 
@@ -18,16 +29,16 @@ export const getContact = () => {
 
 export const addContact = data => {
   const actionFunc = async (dispatch, getStore) => {
-    const { Contact } = getStore();
-    const result = Contact.items.find(item => item.title === data.title);
-    if (result) {
-    }
-    dispatch(actions.addContactRequest());
+    // const { contact } = getStore();
+    // const result = contact.find(item => item.name === data.name);
+    // if (contact) {
+    // }
+    dispatch(addContactRequest());
     try {
       const newContact = await api.fetchAddContact(data);
-      dispatch(actions.addContactuccess(newContact));
+      dispatch(addContactSuccess(newContact));
     } catch (error) {
-      dispatch(actions.addContactError(error));
+      dispatch(addContactError(error));
     }
   };
 
@@ -36,12 +47,12 @@ export const addContact = data => {
 
 export const removeContact = id => {
   const actionFunc = async dispatch => {
-    dispatch(actions.removeContactRequest());
+    dispatch(removeContactRequest());
     try {
-      const removeContact = await api.fetchRemoveContact(id);
-      dispatch(actions.removeContactuccess(id));
+      const contactId = await api.fetchRemoveContact(id);
+      dispatch(removeContactSuccess(contactId));
     } catch (error) {
-      dispatch(actions.removeContactError(error));
+      dispatch(removeContactError(error));
     }
   };
 
