@@ -1,8 +1,7 @@
 import axios from 'axios';
-
+// my-json-server.typicode.com/KliffUndersn/goit-react-hw-07-phonebook
 const instance = axios.create({
-  baseURL:
-    'https://my-json-server.typicode.com/KliffUndersn/goit-react-hw-07-phonebook/contacts',
+  baseURL: 'http://localhost:3001/contacts/',
 });
 
 export const fetchAllContacts = async () => {

@@ -1,9 +1,8 @@
 import api from '../shared/services/contacts';
 import {
+  getContactSuccess,
   getContactError,
   getContactRequest,
-  getContactSuccess,
-  // addContact,
   addContactError,
   addContactRequest,
   addContactSuccess,
@@ -28,7 +27,7 @@ export const getContact = () => {
 };
 
 export const addContact = data => {
-  const actionFunc = async (dispatch, getStore) => {
+  const actionFunc = async dispatch => {
     // const { contact } = getStore();
     // const result = contact.find(item => item.name === data.name);
     // if (contact) {
