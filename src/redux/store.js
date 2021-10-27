@@ -29,6 +29,7 @@ const reducer = createReducer(initialStore, {
     return { filter: state.filter, items: [...state.items, action.payload] };
   },
   [removeContactSuccess]: (state, action) => {
+    console.log(action.payload);
     return {
       filter: state.filter,
       items: state.items.filter(e => e.id !== action.payload),
@@ -39,36 +40,8 @@ const reducer = createReducer(initialStore, {
   },
 });
 
-// const contactPercistConfig = {
-//   key: 'contacts',
-//   storage,
-//   blacklist: ['filter'],
-// };
-
 const store = configureStore({
   reducer: reducer,
 });
 
-// export const persistor = persistStore(store);
 export default store;
-
-// const reducer = (state = initialStore, action) => {
-//   switch (action.type) {
-//     case types.ADD:
-//       return { filter: state.filter, items: [...state.items, action.payload] };
-//     case types.DELETE:
-//       return {
-//         filter: state.filter,
-//         items: state.items.filter(e => e.id !== action.payload),
-//       };
-//     case types.FILTER:
-//       return { filter: action.payload, items: [...state.items] };
-//     default:
-//       return state;
-//   }
-// };
-
-// const store = createStore(
-//   persistReducer(contactPercistConfig, reducer),
-//   composeWithDevTools(),
-// );

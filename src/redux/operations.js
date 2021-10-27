@@ -28,10 +28,6 @@ export const getContact = () => {
 
 export const addContact = data => {
   const actionFunc = async dispatch => {
-    // const { contact } = getStore();
-    // const result = contact.find(item => item.name === data.name);
-    // if (contact) {
-    // }
     dispatch(addContactRequest());
     try {
       const newContact = await api.fetchAddContact(data);
@@ -49,7 +45,8 @@ export const removeContact = id => {
     dispatch(removeContactRequest());
     try {
       const contactId = await api.fetchRemoveContact(id);
-      dispatch(removeContactSuccess(contactId));
+
+      dispatch(removeContactSuccess(id));
     } catch (error) {
       dispatch(removeContactError(error));
     }

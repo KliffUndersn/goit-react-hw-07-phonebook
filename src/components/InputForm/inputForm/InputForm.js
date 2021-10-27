@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { v4 as generate } from 'uuid';
 import { useSelector } from 'react-redux';
 import { addContact, getContact } from '../../../redux/operations';
@@ -12,6 +12,9 @@ const InputForm = () => {
     name: '',
     number: '',
   });
+  useEffect(() => {
+    dispatch(getContact());
+  }, []);
   const handleChange = ({ target }) => {
     setState({ ...state, [target.name]: target.value });
   };
@@ -30,7 +33,6 @@ const InputForm = () => {
       number,
     };
     dispatch(addContact(singleContact));
-    dispatch(getContact());
   };
   return (
     <div>
