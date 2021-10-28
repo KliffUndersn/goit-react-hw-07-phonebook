@@ -1,16 +1,8 @@
 import { configureStore, createReducer } from '@reduxjs/toolkit';
-import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
 import {
-  getContactRequest,
   getContactSuccess,
-  getContactError,
-  addContactRequest,
   addContactSuccess,
-  addContactError,
-  removeContactRequest,
   removeContactSuccess,
-  removeContactError,
   filterContact,
 } from './actions';
 
@@ -21,15 +13,12 @@ const initialStore = {
 
 const reducer = createReducer(initialStore, {
   [getContactSuccess]: (state, action) => {
-    console.log(action.payload);
     return { filter: '', items: action.payload };
   },
   [addContactSuccess]: (state, action) => {
-    console.log(action.payload);
     return { filter: state.filter, items: [...state.items, action.payload] };
   },
   [removeContactSuccess]: (state, action) => {
-    console.log(action.payload);
     return {
       filter: state.filter,
       items: state.items.filter(e => e.id !== action.payload),

@@ -1,3 +1,49 @@
 {
-  "contacts": []
+  "contacts": [
+    {
+      "id": "89080018-ea57-40cf-bbec-49b2f3de6025",
+      "name": "KliffUndersnqwe",
+      "number": "+800000"
+    },
+    {
+      "id": "b3ddb442-ecfc-400f-975b-d4675c1266a6",
+      "name": "KliffUndersna",
+      "number": "+800000"
+    },
+    {
+      "id": "361b4f92-7e33-44e4-82b5-9c3644a1d3e1",
+      "name": "KliffUndersns",
+      "number": "+800000"
+    },
+    {
+      "id": "a82ea914-80b7-49a9-9abb-262da9f19edd",
+      "name": "KliffUndersnd",
+      "number": "+800000"
+    },
+    {
+      "id": "9aa851f7-0a9b-47de-9ef9-68ec29fa51eb",
+      "name": "KliffUndersnf",
+      "number": "+800000"
+    },
+    {
+      "id": "d63608ec-0ad4-4169-aae8-73abe70fb943",
+      "name": "KliffUndersng",
+      "number": "+800000"
+    },
+    {
+      "id": "29503e0e-bd46-4f24-a4e8-cc940b468d54",
+      "name": "KliffUndersnh",
+      "number": "+800000"
+    },
+    {
+      "id": "97559271-1e1e-4450-bb91-5eab43308da4",
+      "name": "KliffUndersnj",
+      "number": "+800000"
+    },
+    {
+      "id": "74d6737c-094f-4346-b153-ac785c747b8e",
+      "name": "KliffUndersnk",
+      "number": "+800000"
+    }
+  ]
 }

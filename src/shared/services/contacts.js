@@ -1,5 +1,5 @@
 import axios from 'axios';
-// my-json-server.typicode.com/KliffUndersn/goit-react-hw-07-phonebook
+
 const instance = axios.create({
   baseURL: 'http://localhost:3001/contacts/',
 });
